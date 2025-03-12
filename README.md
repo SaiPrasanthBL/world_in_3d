@@ -8,3 +8,5 @@ ___
 - [x] Inclusion of datasets for reconstructions
 - [ ] Setting up of intrinsic and extrinsic camera matrices extraction pipeline
 - [ ] Setting up of computer vision exploration pipeline
+
+#### Added Datasets
