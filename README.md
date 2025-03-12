@@ -5,6 +5,6 @@ ARoS Project Repo for experimenting with 3D reconstructions
 3D Reconstruction with Rewards | Physics-informed 3D Reconstruction | 3D Reconstruction through Reinforcement Learning from Pixels
 ___
 ## Objectives for Week 1 (12/03/2025 to 19/03/2025)
-- Inclusion of datasets for reconstructions
-- Setting up of intrinsic and extrinsic camera matrices extraction pipeline
-- Setting up of computer vision exploration pipeline
+- [x] Inclusion of datasets for reconstructions
+- [ ] Setting up of intrinsic and extrinsic camera matrices extraction pipeline
+- [ ] Setting up of computer vision exploration pipeline
