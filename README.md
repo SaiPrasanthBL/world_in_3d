@@ -10,3 +10,5 @@ ___
 - [ ] Setting up of computer vision exploration pipeline
 
 #### Added Datasets
+
+stupid fellow
