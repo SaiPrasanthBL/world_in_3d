@@ -1,0 +1,3 @@
+[submodule "VGGT/trials/vggt/data/co3d"]
+	path = VGGT/trials/vggt/data/co3d
+	url = https://github.com/facebookresearch/co3d.git
