@@ -1,0 +1,353 @@
+INFO 2025-08-08 19:17:11,238 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:17:11,258 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:17:12,029 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:20:20,468 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:20:20,469 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:20:20,496 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:22:35,257 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:22:35,258 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:22:35,285 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:24:19,489 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:24:19,489 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:24:19,517 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:24:56,531 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:24:56,532 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:24:56,559 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:25:06,841 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:25:06,842 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:25:06,870 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:25:17,805 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:25:17,806 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:25:17,834 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:25:27,224 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:25:27,224 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:25:27,254 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:25:37,948 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:25:37,949 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:25:37,976 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:25:42,875 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:25:42,920 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:25:45,172 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:25:45,172 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:25:46,114 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:25:48,888 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:25:48,888 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:25:48,896 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:26:03,821 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:26:03,821 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:27:51,672 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:27:51,673 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:27:51,700 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:27:56,118 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:27:56,162 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:27:58,504 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:27:58,504 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:27:58,524 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:28:01,158 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:28:01,158 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:28:01,166 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:28:15,552 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:28:15,552 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:28:16,259 trainer.py: 200: Resuming training from /home/sbangal4/vggt_new/vggt/checkpoints (rank 0)
+INFO 2025-08-08 19:29:38,611 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:29:38,611 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:29:38,639 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:29:43,050 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:29:43,096 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:29:45,466 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:29:45,466 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:29:45,498 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:29:48,200 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:29:48,200 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:29:48,208 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:30:02,732 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:30:02,732 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:30:03,360 trainer.py: 200: Resuming training from /home/sbangal4/vggt_new/vggt/checkpoints (rank 0)
+INFO 2025-08-08 19:30:21,494 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:30:21,495 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:30:21,522 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:30:25,820 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:30:25,864 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:30:28,149 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:30:28,149 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:30:28,169 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:30:30,884 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:30:30,884 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:30:30,892 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:30:45,373 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:30:45,373 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:32:36,329 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:32:36,330 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:32:36,357 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:32:40,750 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:32:40,799 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:32:43,067 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:32:43,067 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:32:43,086 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:32:45,714 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:32:45,714 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:32:45,721 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:33:00,065 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:33:00,065 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:33:01,223 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:39:05,908 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:39:05,908 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:39:05,936 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:39:10,250 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:39:10,294 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:39:12,562 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:39:12,562 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:39:12,581 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:39:15,215 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:39:15,215 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:39:15,223 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:39:29,585 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:39:29,585 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:39:30,352 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:42:57,354 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:42:57,355 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:42:57,383 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:44:21,680 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:44:21,680 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:44:21,709 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:44:26,050 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:44:26,094 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:44:28,377 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:44:28,377 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:44:28,397 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:44:31,055 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:44:31,055 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:44:31,063 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:44:45,529 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:44:45,529 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:44:46,251 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:48:28,703 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:48:28,704 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:48:28,732 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:49:55,511 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:49:55,512 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:49:55,541 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:50:02,797 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:50:02,798 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:50:02,825 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:50:07,165 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:50:07,209 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:50:09,518 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:50:09,519 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:50:09,538 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:50:12,261 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:50:12,262 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:50:12,269 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:50:26,819 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:50:26,819 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:50:27,561 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:51:43,249 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:51:43,249 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:51:43,276 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:51:47,625 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:51:47,669 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:51:50,052 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:51:50,052 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:51:50,071 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:51:52,703 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:51:52,703 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:51:52,711 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:52:07,144 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:52:07,144 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:52:07,900 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:52:38,530 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 19:52:38,530 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 19:52:38,558 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 19:52:42,883 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:52:42,926 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 19:52:45,235 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 19:52:45,235 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 19:52:45,255 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:52:47,888 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 19:52:47,888 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 19:52:47,896 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 19:53:02,332 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 19:53:02,332 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 19:53:03,056 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:01:58,679 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:01:58,680 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:01:58,709 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:02:03,259 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:02:03,308 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:02:05,626 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:02:05,626 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:02:05,645 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:02:08,314 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 20:02:08,314 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:02:08,322 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:02:22,906 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 20:02:22,906 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:02:23,666 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:06:03,736 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:06:03,737 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:06:03,765 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:06:08,178 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:06:08,224 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:06:10,551 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:06:10,552 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:06:10,571 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:06:13,227 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 20:06:13,227 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:06:13,236 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:06:27,687 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 20:06:27,688 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:06:28,407 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:08:20,333 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:08:20,333 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:08:20,363 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:08:24,768 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:08:24,812 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:08:27,121 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:08:27,121 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:08:27,140 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:08:29,798 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 20:08:29,798 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:08:29,806 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:08:44,240 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 20:08:44,240 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:08:44,967 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:09:04,359 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:09:04,359 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:09:04,388 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:09:08,756 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:09:08,800 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:09:11,159 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:09:11,159 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:09:11,179 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:09:13,895 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 20:09:13,896 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:09:13,903 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:09:28,329 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 20:09:28,329 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:09:29,060 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:11:28,592 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:11:28,592 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:11:28,621 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:11:33,056 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:11:33,102 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:11:35,388 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:11:35,388 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:11:35,407 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:11:38,065 co3d.py: 159: Testing: Co3D Data size: 2035
+INFO 2025-08-08 20:11:38,065 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:11:38,073 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:11:52,558 co3d.py: 159: Training: Co3D Data size: 21528
+INFO 2025-08-08 20:11:52,558 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:11:53,325 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:16:40,599 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:16:40,599 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:16:40,627 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:16:45,057 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:16:45,106 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:16:47,401 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:16:47,401 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:16:47,421 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+ERROR 2025-08-08 20:16:48,221 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/car_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/carrot_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/cellphone_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/chair_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/cup_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/donut_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/hairdryer_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/handbag_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/hydrant_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/keyboard_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/laptop_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/microwave_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/motorcycle_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/mouse_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/orange_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/parkingmeter_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/pizza_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/plant_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/stopsign_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/teddybear_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toaster_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toilet_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toybus_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toyplane_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toytrain_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toytruck_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/tv_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/umbrella_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/vase_test.jgz
+ERROR 2025-08-08 20:16:48,222 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/wineglass_test.jgz
+INFO 2025-08-08 20:16:48,222 co3d.py: 159: Testing: Co3D Data size: 543
+INFO 2025-08-08 20:16:48,222 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:16:48,230 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/car_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/carrot_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/cellphone_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/chair_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/cup_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/donut_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/hairdryer_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/handbag_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/hydrant_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/keyboard_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/laptop_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/microwave_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/motorcycle_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/mouse_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/orange_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/parkingmeter_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/pizza_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/plant_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/stopsign_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/teddybear_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toaster_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toilet_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toybus_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toyplane_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toytrain_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/toytruck_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/tv_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/umbrella_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/vase_train.jgz
+ERROR 2025-08-08 20:16:52,116 co3d.py: 143: Annotation file not found: /home/sbangal4/vggt_new/vggt/data/anno_co3d/wineglass_train.jgz
+INFO 2025-08-08 20:16:52,116 co3d.py: 159: Training: Co3D Data size: 5463
+INFO 2025-08-08 20:16:52,116 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:16:52,856 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:30:15,668 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:30:15,669 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:30:15,697 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:30:20,151 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:30:20,200 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:30:22,519 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:30:22,519 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:34:45,019 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:34:45,020 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:34:45,047 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:34:59,214 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:34:59,215 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:34:59,242 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:35:03,579 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:35:03,623 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:35:05,992 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:35:05,993 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:35:06,014 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:35:06,817 co3d.py: 159: Testing: Co3D Data size: 543
+INFO 2025-08-08 20:35:06,817 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:35:06,825 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:35:10,662 co3d.py: 159: Training: Co3D Data size: 5463
+INFO 2025-08-08 20:35:10,663 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:35:11,394 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:39:32,419 general.py: 221: GPU SEED: 840
+INFO 2025-08-08 20:39:32,420 trainer.py: 241: Setting up components: Model, Loss, Logger, etc.
+INFO 2025-08-08 20:39:32,450 tb_writer.py:  45: TensorBoard SummaryWriter instantiated. Files will be stored in: logs/tensorboard
+INFO 2025-08-08 20:39:36,825 trainer.py: 254: [Start] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:39:36,869 trainer.py: 261: [Done] Freezing modules: ['*aggregator*'] on rank 0
+INFO 2025-08-08 20:39:39,185 trainer.py: 269: Model summary saved to logs/model.txt
+INFO 2025-08-08 20:39:39,185 trainer.py: 271: Successfully initialized training components.
+INFO 2025-08-08 20:39:39,204 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:39:40,003 co3d.py: 159: Testing: Co3D Data size: 543
+INFO 2025-08-08 20:39:40,003 co3d.py: 160: Testing: Co3D Data dataset length: 10000
+INFO 2025-08-08 20:39:40,011 co3d.py: 126: CO3D_DIR is /home/sbangal4/vggt_new/vggt/data/data_co3d
+INFO 2025-08-08 20:39:43,901 co3d.py: 159: Training: Co3D Data size: 5463
+INFO 2025-08-08 20:39:43,901 co3d.py: 160: Training: Co3D Data dataset length: 100000
+INFO 2025-08-08 20:39:44,641 general.py: 221: GPU SEED: 840
