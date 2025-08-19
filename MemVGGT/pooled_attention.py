@@ -10,6 +10,8 @@ import math
 from utils import load_batches
 from attention import MLP, Encoder, VisionTransformer
 from patch_embed import ClassToken, PatchEmbed, PositionalEncoding
+from memory_bank import MemoryBank
+from torch.nn.functional import scaled_dot_product_attention as sdpa
 
 class PooledEncoder(nn.Module):
     """Transformer encoder block with spatiotemporal pooling."""
@@ -21,6 +23,7 @@ class PooledEncoder(nn.Module):
         attn_dropout: float = 0.0,
         dropout: float = 0.0,
         kv_cls_flag: bool = True,
+        use_memory: bool = True,
     ):
         super().__init__()
         self.norm1 = nn.LayerNorm(embed_dim, eps=1e-6)
@@ -36,6 +39,15 @@ class PooledEncoder(nn.Module):
         self.norm2 = nn.LayerNorm(embed_dim, eps=1e-6) # Pre-norm before MLP branch.
         self.mlp = MLP(embed_dim, mlp_ratio=4.0, dropout=dropout) # 2-layer FFN (expansion 4x).
         self.drop_path2 = nn.Dropout(dropout)   # Dropout on the MLP residual branch.
+        self.num_heads = num_heads
+        self.embed_dim = embed_dim
+        self.use_memory = use_memory
+        self.head_dim = embed_dim // num_heads
+
+        self.q_proj = nn.Linear(embed_dim, embed_dim, bias=False)
+        self.k_proj = nn.Linear(embed_dim, embed_dim, bias=False)
+        self.v_proj = nn.Linear(embed_dim, embed_dim, bias=False)
+        self.out_proj = nn.Linear(embed_dim, embed_dim, bias=False)
 
     @staticmethod
     def _pool_kv(x_spatial: torch.Tensor, hw: tuple[int, int, int], stride: int) -> torch.Tensor:
@@ -56,8 +68,17 @@ class PooledEncoder(nn.Module):
         # Reshape back to (B, N', C) where N' is the pooled sequence length
         x_pooled = x3d_pooled.permute(0, 2, 3, 4, 1).contiguous().view(B, T_pool * H_pool * W_pool, C_pool)
         return x_pooled
-        
-    def forward(self, x: torch.Tensor, hw: tuple[int, int, int]) -> torch.Tensor:
+    
+    def _split_heads(self, x: torch.Tensor) -> torch.Tensor:
+        """Split the last dimension into (num_heads, head_dim)."""
+        B, N, D = x.shape
+        return x.view(B, N, self.num_heads, self.head_dim).permute(0, 2, 1, 3).contiguous() # (B, num_heads, N, head_dim)
+    
+    def _merge_heads(self, x: torch.Tensor) -> torch.Tensor:
+        B, num_heads, N, head_dim = x.shape
+        return x.permute(0, 2, 1, 3).contiguous().view(B, N, num_heads * head_dim)
+
+    def forward(self, x: torch.Tensor, hw: tuple[int, int, int], memory_bank=None) -> torch.Tensor:
         
         """
         x: (B, S, C) where S = 1 + T*H*W if CLS present, else S = T*H*W
@@ -86,14 +107,52 @@ class PooledEncoder(nn.Module):
             # Append CLS token to pooled key and value tensors
             x_kv = torch.cat((x_cls, x_spatial_pooled), dim=1)  # (B, 1 + T*H'*W', C)
         else:
-            x_kv = x_spatial_pooled  # (B, T*H'*W', C)
-            
+            x_kv = x_spatial_pooled 
+
+        Q = self.q_proj(x_norm)  # (B, S, C)
+        K = self.k_proj(x_kv)
+        V = self.v_proj(x_kv)
+
+        # Split heads for multi-head attention
+        Qh = self._split_heads(Q)  # (B, num_heads, S, head_dim)
+        Kh = self._split_heads(K)  # (B, num_heads, T*H'*W', head_dim)
+        Vh = self._split_heads(V)  # (B, num_heads, T*H'*W', head_dim)
+
+        #read from previous memory bank if available
+        if self.use_memory and memory_bank is not None:
+            K_mem, V_mem = memory_bank.read(K, V)
+        else:
+            K_mem, V_mem = None, None
+        
+        if K_mem is not None and V_mem is not None:
+            Kmh = self._split_heads(K_mem)  # (B, num_heads, M, head_dim)
+            Vmh = self._split_heads(V_mem)
+            K_all = torch.cat((Kmh,Kh), dim=2)
+            V_all = torch.cat((Vmh,Vh), dim=2)
+        else:
+            K_all, V_all = Kh, Vh
+
+        # Scaled dot-product attention
+        attn_output = sdpa(
+            Qh, K_all, V_all, dropout_p=self.attn.dropout if hasattr(self.attn, 'dropout') else 0.0, is_causal=False
+        )
+        attn_output = self._merge_heads(attn_output)  # (B, S, C)
+        # Apply output projection
+        attn_output = self.out_proj(attn_output)
+         # (B, T*H'*W', C)
         # Multi-head self-attention (pre-norm)
-        x_attn, _ = self.attn(x_norm, x_kv, x_kv, need_weights=True)
-        x = x + self.drop_path1(x_attn)  # Residual connection
+        #x_attn, _ = self.attn(x_norm, x_kv, x_kv, need_weights=True)
+        x = x + self.drop_path1(attn_output)  # Residual connection
         
         # MLP (pre-norm)
         x = x + self.drop_path2(self.mlp(self.norm2(x)))
+
+        # ===== WRITE memory AFTER attention; base shape (B, Np, D) =====
+        if self.use_memory and (memory_bank is not None):
+            with torch.no_grad():
+                Ks = self.k_proj(x_spatial_pooled)   # (B, Np, D)  pooled spatial only
+                Vs = self.v_proj(x_spatial_pooled)   # (B, Np, D)
+                memory_bank.write(Ks, Vs)
 
         return x
     
@@ -148,7 +207,8 @@ class PooledVisionTransformer(nn.Module):
                     attn_dropout=attn_dropout,
                     dropout=dropout,
                     kv_pool_stride = 1,
-                    kv_cls_flag = True
+                    kv_cls_flag = True,
+                    use_memory=True,  # Enable memory bank usage
                 )
                 for _ in range(num_layers)
             ]
@@ -164,7 +224,7 @@ class PooledVisionTransformer(nn.Module):
         self.num_layers = num_layers
         self.num_classes = num_classes
         self.patch_size = patch_size
-
+        self.memory_bank = MemoryBank(max_tokens=500, dtype=torch.float16)
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         x: (B, C, H, W)
@@ -197,7 +257,7 @@ class PooledVisionTransformer(nn.Module):
 
         # 4) Encoder blocks
         for blk in self.blocks:
-            x = blk(x, hw)
+            x = blk(x, hw, memory_bank = self.memory_bank)
 
         # 5) Final norm
         x = self.norm(x)
@@ -226,6 +286,7 @@ def __main__():
         dropout=0.1,
         attn_dropout=0.1,
     )
+    model.memory_bank = MemoryBank(max_tokens=0, dtype=torch.float16)
     logits = model(images)
     print(logits.shape)  # Should print (2, 1000)
     print(logits)
