@@ -50,8 +50,13 @@ class PositionalEncoding(nn.Module):
         self.pos_embed = nn.Parameter(torch.zeros(1, num_patches + 1, embed_dim))
         nn.init.trunc_normal_(self.pos_embed, std=0.02)
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        x = x + self.pos_embed[:, :x.size(1), :]
+    def forward(self, x: torch.Tensor, patch_start_idx: int) -> torch.Tensor:
+        B, S, D = x.shape
+        L = S - patch_start_idx
+        pe = x.new_zeros(B, S, D)
+        pe[:, :1, :] = self.pos_embed[:, :1, :]
+        pe[:, patch_start_idx:, :] = self.pos_embed[:, 1:1+L, :]
+        x = x + pe
         return x
 
 if __name__ == "__main__":

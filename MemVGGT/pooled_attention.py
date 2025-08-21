@@ -10,6 +10,7 @@ import math
 from utils import load_batches
 from attention import MLP, Encoder, VisionTransformer
 from patch_embed import ClassToken, PatchEmbed, PositionalEncoding
+from tokenizer import CameraToken, RegisterToken
 from memory_bank import MemoryBank
 from torch.nn.functional import scaled_dot_product_attention as sdpa
 
@@ -24,6 +25,7 @@ class PooledEncoder(nn.Module):
         dropout: float = 0.0,
         kv_cls_flag: bool = True,
         use_memory: bool = True,
+        patch_start_idx: None = None
     ):
         super().__init__()
         self.norm1 = nn.LayerNorm(embed_dim, eps=1e-6)
@@ -43,6 +45,7 @@ class PooledEncoder(nn.Module):
         self.embed_dim = embed_dim
         self.use_memory = use_memory
         self.head_dim = embed_dim // num_heads
+        self.patch_start_idx = patch_start_idx
 
         self.q_proj = nn.Linear(embed_dim, embed_dim, bias=False)
         self.k_proj = nn.Linear(embed_dim, embed_dim, bias=False)
@@ -92,10 +95,14 @@ class PooledEncoder(nn.Module):
 
         x_norm = self.norm1(x)
 
-        if has_cls:
-            x_cls, x_spatial = x_norm[:, :1, :], x_norm[:, 1:, :]  # (B, 1, C), (B, T*H*W, C)
-        else:
-            x_cls, x_spatial = None, x_norm  # (B, T*H*W, C)
+        # First token is CLS; patches begin at patch_start_idx
+        x_cls     = x_norm[:, :1, :]                           # (B,1,C)
+        x_spatial = x_norm[:, self.patch_start_idx:, :]        # (B, L, C)
+
+        # if has_cls:
+        #     x_cls, x_spatial = x_norm[:, :1, :], x_norm[:, 1:, :]  # (B, 1, C), (B, T*H*W, C)
+        # else:
+        #     x_cls, x_spatial = None, x_norm  # (B, T*H*W, C)
             
         # Pool key and value tensors if stride > 1
         if self.kv_pool_stride > 1:
@@ -103,11 +110,13 @@ class PooledEncoder(nn.Module):
         else:
             x_spatial_pooled = x_spatial
 
-        if has_cls and self.kv_cls_flag:
-            # Append CLS token to pooled key and value tensors
-            x_kv = torch.cat((x_cls, x_spatial_pooled), dim=1)  # (B, 1 + T*H'*W', C)
-        else:
-            x_kv = x_spatial_pooled 
+        # if has_cls and self.kv_cls_flag:
+        #     # Append CLS token to pooled key and value tensors
+        #     x_kv = torch.cat((x_cls, x_spatial_pooled), dim=1)  # (B, 1 + T*H'*W', C)
+        # else:
+        #     x_kv = x_spatial_pooled 
+
+        x_kv = torch.cat([x_cls, x_spatial_pooled], dim=1) if self.kv_cls_flag else x_spatial_pooled
 
         Q = self.q_proj(x_norm)  # (B, S, C)
         K = self.k_proj(x_kv)
@@ -191,13 +200,19 @@ class PooledVisionTransformer(nn.Module):
         self.patch_embed = PatchEmbed(img, batch_size, patch_size, channels, embed_dim)
         self.class_token = ClassToken(embed_dim)
 
+        self.n_cam = 1
+        self.n_reg = 4
+        self.patch_start_idx = 1 + self.n_cam + self.n_reg
+
+        self.camera_token = CameraToken(embed_dim)
+        self.register_token = RegisterToken(n_reg=self.n_reg, embed_dim=embed_dim)
         # +1 for CLS token
-        self.positional_encoding = PositionalEncoding(embed_dim, num_patches=1 + self.patch_embed.num_patches)
+        self.positional_encoding = PositionalEncoding(embed_dim, num_patches=self.patch_embed.num_patches)
 
         # Precompute (T,H,W) for an image-only case (T=1)
         # H_img, W_img = img.shape[-2], img.shape[-1]
         # self.hw = (1, H_img // patch_size, W_img // patch_size)
-
+        
         # Encoder stack
         self.blocks = nn.ModuleList(
             [
@@ -209,6 +224,7 @@ class PooledVisionTransformer(nn.Module):
                     kv_pool_stride = 1,
                     kv_cls_flag = True,
                     use_memory=True,  # Enable memory bank usage
+                    patch_start_idx=self.patch_start_idx
                 )
                 for _ in range(num_layers)
             ]
@@ -225,6 +241,8 @@ class PooledVisionTransformer(nn.Module):
         self.num_classes = num_classes
         self.patch_size = patch_size
         self.memory_bank = MemoryBank(max_tokens=500, dtype=torch.float16)
+        
+
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         x: (B, C, H, W)
@@ -241,13 +259,15 @@ class PooledVisionTransformer(nn.Module):
         # 1) Patchify & project -> (B, L, D)
 
         x = self.patch_embed(x)
-
+        # 1.5) Prepend Camera tokens -> (B, 2+L, D)
+        x = self.camera_token(x)  # (B, 2+L, D)
+        # 1.75) Prepend Register tokens -> (B, 2+2+L, D)
+        x = self.register_token(x)  # (B, 2+2+L
         # 2) Prepend CLS token -> (B, 1+L, D)
         x = self.class_token(x)
-
         # 3) Add absolute positional encodings
         #    (PositionalEncoding should slice to current length automatically)
-        x = self.positional_encoding(x)
+        x = self.positional_encoding(x, patch_start_idx=self.patch_start_idx)
 
         # S = x.shape[1]
         # L = S - 1
@@ -286,7 +306,7 @@ def __main__():
         dropout=0.1,
         attn_dropout=0.1,
     )
-    model.memory_bank = MemoryBank(max_tokens=0, dtype=torch.float16)
+    model.memory_bank = MemoryBank(max_tokens=40, dtype=torch.float16)
     logits = model(images)
     print(logits.shape)  # Should print (2, 1000)
     print(logits)
