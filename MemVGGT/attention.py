@@ -151,11 +151,11 @@ class VisionTransformer(nn.Module):
 
 def __main__():
     img_folder = '/home/sbangal4/world_in_3d/VGGT/trials/vggt/data/data_co3d/apple/110_13051_23361/images'
-    images = load_batches(img_folder, limit=2)
+    images = load_batches(img_folder, limit=10)
     torch.manual_seed(0)
     model = VisionTransformer(
         img=images,
-        batch_size=2,
+        batch_size=5,
         patch_size=16,
         channels=3,
         embed_dim=768,
